@@ -1,0 +1,513 @@
+/* ---------- ОБЩИЕ СТИЛИ ---------- */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #222;
+    min-height: 100vh;
+    position: relative;
+}
+
+#matrix-bg {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0.18;
+}
+
+/* ---------- HEADER ---------- */
+.hero-header {
+    background: linear-gradient(120deg, #2563eb 55%, #4fd1ff 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px 0 #2563eb35;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 32px 18px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-header h1 {
+    font-size: 2.3rem;
+    margin: 0 0 7px 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px #1b295b55;
+}
+
+.hero-header p {
+    font-size: 1.08rem;
+    margin: 0 0 2px 0;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+}
+
+/* ---------- НАВИГАЦИЯ ---------- */
+.hero-header nav {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    padding: 10px 32px;
+    box-shadow: 0 2px 10px 0 #2563eb17;
+}
+
+.hero-header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background 0.18s, color 0.18s;
+    background: transparent;
+}
+
+.hero-header nav a:hover, 
+.hero-header nav a:focus {
+    background: #fff;
+    color: #2563eb;
+    text-shadow: none;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(rgba(30, 58, 138, 0.82), rgba(30, 58, 138, 0.82));
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+}
+
+/* ---------- ПАРАЛЛАКС ---------- */
+.parallax-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.parallax-container img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.parallax-container img.left {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.parallax-container img.right {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.parallax-container img.visible {
+    transform: translateX(0);
+}
+
+/* ---------- КОНТЕЙНЕР ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- СЕКЦИИ ---------- */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #2563eb;
+    margin: 2rem 0 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #4fd1ff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+/* ---------- КАРТОЧКИ ---------- */
+.courses, .advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #e0f2fe;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ---------- ОТДЕЛЬНО ДЛЯ СЕКЦИЙ ---------- */
+#courses {
+    background-color: #e8f5fe;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#advantages {
+    background-color: #e8f5fe;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 900px) {
+    .hero-header .container {
+        padding: 18px 8px 10px 8px;
+    }
+    .container {
+        padding: 1rem;
+    }
+    .parallax-container {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-header .container {
+        padding: 14px 4px 8px 4px;
+    }
+    .hero-header h1 {
+        font-size: 1.3rem;
+    }
+    section h2 {
+        font-size: 1.2rem;
+        padding-bottom: 0.3rem;
+    }
+    .hero {
+        padding: 2rem 0.5rem;
+    }
+    .container {
+        padding: 0.5rem;
+    }
+}
+
+/* ---------- АНИМАЦИИ ЗАГОЛОВКОВ ---------- */
+h1, h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem 3rem 2rem;
+    background: linear-gradient(120deg, #f0f7ff 70%, #e0ecff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: 260px;
+    background: radial-gradient(circle at 50% 0%, #2563eb77 0%, #4fd1ff33 80%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 24px #1e3a8a22, 0 1px 0 #fff;
+    z-index: 1;
+    position: relative;
+    animation: fadeInHeroTitle 1.4s cubic-bezier(.41,2,.3,.86) 0s 1;
+}
+
+.hero p {
+    font-size: 1.35rem;
+    color: #1e3a8a;
+    opacity: 0.92;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    animation: fadeInHeroText 1.7s cubic-bezier(.41,2,.3,.86) 0.2s 1;
+}
+
+@keyframes fadeInHeroTitle {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95);}
+    90% { opacity: 1; transform: translateY(-2px) scale(1.02);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+@keyframes fadeInHeroText {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95);}
+    90% { opacity: 1; transform: translateY(-2px) scale(1.01);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+/* Для мобильных */
+@media (max-width: 600px) {
+    .hero {
+        padding: 2.2rem 0.5rem 1.5rem 0.5rem;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+.hero h1,
+.hero p {
+    opacity: 1;
+    transform: none;
+    animation: fadeInHeroTitle 1.4s cubic-bezier(.41,2,.3,.86) 0s 1;
+    /* Оставляем анимацию появления, но убираем исчезновение после */
+}
+
+@keyframes fadeInHeroTitle {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95);}
+    90% { opacity: 1; transform: translateY(-2px) scale(1.02);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.card h2,
+.card p {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card h2 {
+    animation: fadeInCardTitle 0.9s cubic-bezier(.41,2,.3,.86) 0.1s forwards;
+}
+
+.card p {
+    animation: fadeInCardText 0.9s cubic-bezier(.41,2,.3,.86) 0.3s forwards;
+}
+
+@keyframes fadeInCardTitle {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInCardText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container > h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    margin: 2.5rem 0 1.4rem 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+    background: linear-gradient(90deg, #2563eb 60%, #4fd1ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.container > h2::after {
+    content: "";
+    display: block;
+    margin: 14px auto 0 auto;
+    width: 54px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #2563eb 40%, #4fd1ff 100%);
+}
+
+footer#contact {
+    background: linear-gradient(135deg, #0063B2 0%, #00B4D8 100%);
+    color: #fff;
+    padding: 40px 0 25px 0;
+    text-align: center;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    box-shadow: 0 -4px 24px rgba(0, 99, 178, 0.15);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    letter-spacing: 0.03em;
+}
+
+footer#contact p {
+    margin: 0 0 12px 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.7;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+footer#contact p:last-child {
+    margin-bottom: 0;
+}
+
+footer#contact a,
+footer#contact p {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer#contact a:hover {
+    color: #ffd166;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    footer#contact {
+        padding: 24px 10px 18px 10px;
+        font-size: 0.99rem;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    footer#contact p {
+        font-size: 1rem;
+    }
+}
+
+/* ---------- АДАПТИВ ДЛЯ СМАРТФОНОВ ---------- */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .hero-header .container {
+        padding: 12px 10px;
+    }
+    .hero-header h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    .hero-header p {
+        font-size: 0.9rem;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 0.5rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 5px 14px;
+    }
+    .parallax-container {
+        height: 180px;
+    }
+    .container {
+        padding: 0.8rem;
+    }
+    section {
+        margin-bottom: 24px;
+    }
+    section h2 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        margin: 1.5rem 0 1rem;
+    }
+    .courses, .advantages {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .card {
+        padding: 1rem;
+    }
+    .card h2 {
+        font-size: 1.1rem;
+    }
+    .card p {
+        font-size: 0.9rem;
+    }
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.85rem;
+    }
+    footer p {
+        font-size: 0.9rem;
+    }
+    .hero {
+        padding: 2rem 1rem 1.5rem;
+    }
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
